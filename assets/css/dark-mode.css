@@ -1,0 +1,61 @@
+/* 
+    StageReady - TEDx Coach Website 
+    Dark Mode Overrides 
+*/
+
+body.dark-theme {
+    --bg-color: #171717; /* Deep Charcoal */
+    --text-color: #FFFFFF;
+    --primary-color: #E62B1E; /* Keep TEDx Red */
+    --accent-color: #E62B1E;
+    
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body.dark-theme .btn-outline {
+    border-color: #FFF;
+    color: #FFF;
+}
+
+body.dark-theme .btn-outline:hover {
+    background-color: #FFF;
+    color: #171717;
+}
+
+body.dark-theme .navbar {
+    background-color: var(--bg-color) !important;
+}
+
+body.dark-theme .navbar-nav .nav-link {
+    color: #FFF !important;
+}
+
+body.dark-theme .navbar-nav .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+body.dark-theme header {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+body.dark-theme footer {
+    background: #000; /* Footer remains black */
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+body.dark-theme .image-placeholder {
+    background-color: #1a1a1a;
+    border-color: #333;
+    color: #666;
+}
+
+/* Specific component dark mode tweaks */
+body.dark-theme .speech-map-bar {
+    background: #333;
+}
+
+body.dark-theme .offcanvas {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}

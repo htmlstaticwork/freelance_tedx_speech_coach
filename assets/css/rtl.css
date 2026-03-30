@@ -1,0 +1,54 @@
+/* 
+    StageReady - TEDx Coach Website 
+    RTL Overrides 
+*/
+
+[dir="rtl"] {
+    text-align: right;
+    font-family: 'Cairo', 'Almarai', sans-serif; /* Standard RTL fonts */
+}
+
+/* RTL-specific alignments */
+[dir="rtl"] .ms-auto {
+    margin-right: auto !important;
+    margin-left: initial !important;
+}
+
+[dir="rtl"] .me-auto {
+    margin-left: auto !important;
+    margin-right: initial !important;
+}
+
+[dir="rtl"] .ps-3 {
+    padding-right: 1rem !important;
+    padding-left: initial !important;
+}
+
+[dir="rtl"] .pe-3 {
+    padding-left: 1rem !important;
+    padding-right: initial !important;
+}
+
+/* Sidebar navigation in dashboard */
+[dir="rtl"] .dashboard-sidebar {
+    border-right: none;
+    border-left: 2px solid var(--primary-color);
+}
+
+[dir="rtl"] .nav-link {
+    text-align: right;
+}
+
+/* Icons mirroring */
+[dir="rtl"] .bi-arrow-right::before {
+    content: "\F12C"; /* bi-arrow-left */
+}
+
+[dir="rtl"] .bi-arrow-left::before {
+    content: "\F138"; /* bi-arrow-right */
+}
+
+/* Countdown labels spacing */
+[dir="rtl"] .countdown-label {
+    letter-spacing: 0;
+}

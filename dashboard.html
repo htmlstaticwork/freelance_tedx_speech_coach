@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaker Dashboard | StageReady</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link id="bootstrap-rtl" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet" disabled>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/dark-mode.css"><link rel="stylesheet" href="assets/css/rtl.css">
+    <style>
+        :root {
+            --sidebar-width: 250px;
+        }
+        body { background-color: #f8f9fa; }
+        body.dark-theme { background-color: #1a1a1a; }
+        
+        .dashboard-wrapper { display: flex; min-height: 100 vh; }
+        
+        .sidebar {
+            width: var(--sidebar-width);
+            background: #000;
+            color: #fff;
+            position: fixed;
+            height: 100vh;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            padding: 30px;
+            transition: var(--transition);
+        }
+
+        [dir="rtl"] .sidebar {
+            right: 0;
+            left: auto;
+        }
+        [dir="rtl"] .main-content {
+            margin-left: 0;
+            margin-right: var(--sidebar-width);
+        }
+
+        .nav-link-dash {
+            color: rgba(255,255,255,0.6);
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-left: 4px solid transparent;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .nav-link-dash:hover, .nav-link-dash.active {
+            color: #fff;
+            background: rgba(255,255,255,0.05);
+            border-left-color: var(--primary-color);
+        }
+        
+        [dir="rtl"] .nav-link-dash {
+            border-left: none;
+            border-right: 4px solid transparent;
+        }
+        [dir="rtl"] .nav-link-dash:hover, [dir="rtl"] .nav-link-dash.active {
+            border-right-color: var(--primary-color);
+        }
+
+        .stat-card {
+            border: none;
+            border-radius: 0;
+            padding: 25px;
+            background: #fff;
+        }
+        body.dark-theme .stat-card {
+            background: #252525;
+            color: #fff;
+        }
+
+        .tab-pane-custom {
+            display: none;
+        }
+        .tab-pane-custom.active {
+            display: block;
+        }
+
+        @media (max-width: 1100px) {
+            .sidebar { transform: translateX(-100%); }
+            [dir="rtl"] .sidebar { transform: translateX(100%); }
+            .sidebar.show { transform: translateX(0); }
+            .main-content { margin-left: 0 !important; margin-right: 0 !important; }
+        }
+    </style>
+</head>
+<body class="dark-theme"> <!-- Dashboard defaults to dark for 'war room' feel -->
+
+    <div class="dashboard-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="dashboardSidebar">
+            <div class="p-4 mb-4">
+                <a href="index.html" class="d-flex align-items-center text-white text-decoration-none">
+                    <svg width="32" height="32" viewBox="0 0 40 40" fill="none" class="me-2"><circle cx="20" cy="20" r="18" stroke="#E62B1E" stroke-width="2"/><path d="M20 10V30M14 16L20 10L26 16" stroke="#E62B1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span class="fw-bold fs-5 ls-1">StageReady</span>
+                </a>
+            </div>
+
+            <nav class="nav flex-column">
+                <div class="nav-link-dash active" onclick="switchTab('overview')"><i class="bi bi-grid-fill"></i> Overview</div>
+                <div class="nav-link-dash" onclick="switchTab('sessions')"><i class="bi bi-camera-video-fill"></i> Sessions</div>
+                <div class="nav-link-dash" onclick="switchTab('drafts')"><i class="bi bi-file-earmark-text-fill"></i> Speech Drafts</div>
+                <div class="nav-link-dash" onclick="switchTab('rehearsal')"><i class="bi bi-stopwatch-fill"></i> Rehearsal Log</div>
+                <div class="nav-link-dash" onclick="switchTab('calendar')"><i class="bi bi-calendar3"></i> Calendar</div>
+                <div class="nav-link-dash" onclick="switchTab('resources')"><i class="bi bi-journal-bookmark-fill"></i> Resources</div>
+                <div class="nav-link-dash mt-auto" onclick="switchTab('settings')"><i class="bi bi-gear-fill"></i> Settings</div>
+                <a href="index.html" class="nav-link-dash text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
+            </nav>
+
+            <div class="p-4 mt-4 border-top border-secondary border-opacity-25">
+                <div class="d-flex gap-3 justify-content-center">
+                    <button class="btn btn-sm btn-outline-secondary" id="theme-toggle"><i class="bi bi-sun-fill"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary" id="rtl-toggle">RTL</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <div class="d-flex justify-content-between align-items-center mb-5">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-link text-white d-xl-none p-0" onclick="toggleSidebar()"><i class="bi bi-list fs-2"></i></button>
+                    <h2 class="fw-bold mb-0" id="currentTabTitle">Overview</h2>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                    <div class="text-end d-none d-md-block">
+                        <div class="fw-bold small">Dr. Priya Sharma</div>
+                        <div class="text-secondary small">TEDxBangalore Speaker</div>
+                    </div>
+                    <div class="rounded-circle bg-red d-flex align-items-center justify-content-center text-white fw-bold" style="width: 40px; height: 40px;">P</div>
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            
+            <!-- Overview Tab -->
+            <div id="overview" class="tab-pane-custom active">
+                <div class="row g-4 mb-5">
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="text-secondary small text-uppercase fw-bold mb-2">Weeks Until Talk</div>
+                            <div class="fs-2 fw-bold text-red">03</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="text-secondary small text-uppercase fw-bold mb-2">Drafts Submitted</div>
+                            <div class="fs-2 fw-bold text-red">07</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="text-secondary small text-uppercase fw-bold mb-2">Rehearsals Logged</div>
+                            <div class="fs-2 fw-bold text-red">12/15</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-card">
+                            <div class="text-secondary small text-uppercase fw-bold mb-2">Next Session</div>
+                            <div class="fs-2 fw-bold text-red">Tomw</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4 mb-4">
+                            <h5 class="fw-bold mb-4">Current Phase: Stage Simulation</h5>
+                            <p class="text-secondary">You are in the final stretch. We are focusing on removing vocal filler and perfecting your movement on the red circle.</p>
+                            <div class="progress rounded-0 mb-3" style="height: 10px;">
+                                <div class="progress-bar bg-red" style="width: 80%"></div>
+                            </div>
+                            <div class="d-flex justify-content-between small fw-bold">
+                                <span>Prep Start</span>
+                                <span>Stage Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card rounded-0 border-0 bg-red text-white p-4">
+                            <h5 class="fw-bold mb-3">Action Required</h5>
+                            <p class="small mb-4">Upload the video of your 12th rehearsal for Marcus's feedback.</p>
+                            <button class="btn btn-outline border-white text-white w-100 rounded-0" onclick="switchTab('drafts')">Go to Drafts</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sessions Tab -->
+            <div id="sessions" class="tab-pane-custom">
+                <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4">
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Session Type</th>
+                                    <th>Coach</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold text-red">Oct 24, 2026</td>
+                                    <td>Final Stage Simulation</td>
+                                    <td>Marcus Vane</td>
+                                    <td><span class="badge bg-success">Confirmed</span></td>
+                                    <td><button class="btn btn-sm btn-red">Join Call</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-secondary">Oct 17, 2026</td>
+                                    <td>Body Language Review</td>
+                                    <td>Marcus Vane</td>
+                                    <td><span class="badge bg-dark text-secondary">Completed</span></td>
+                                    <td><button class="btn btn-sm btn-outline-secondary">Watch Recording</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drafts Tab -->
+            <div id="drafts" class="tab-pane-custom">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-5 text-center border-dashed">
+                            <i class="bi bi-cloud-upload fs-1 text-red mb-3"></i>
+                            <h5 class="fw-bold">Upload Speech Draft</h5>
+                            <p class="small text-secondary mb-4">Word, PDF, or Video Files Allowed.</p>
+                            <button class="btn-red px-5">Select Files</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4">
+                            <h5 class="fw-bold mb-4">History</h5>
+                            <ul class="nav flex-column gap-3">
+                                <li class="d-flex justify-content-between align-items-center p-3 border-bottom">
+                                    <div><div class="fw-bold small">Draft_V7_Surgery.pdf</div><div class="small text-secondary">Oct 14, 2026</div></div>
+                                    <span class="badge bg-red">Feedback Ready</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center p-3 border-bottom">
+                                    <div><div class="fw-bold small">Draft_V6_Core.pdf</div><div class="small text-secondary">Oct 07, 2026</div></div>
+                                    <span class="badge bg-secondary">Reviewed</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard JS implementation continues... -->
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+</body>
+</html>
