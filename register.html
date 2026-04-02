@@ -1,62 +1,90 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apply | StageReady Speaker Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link id="bootstrap-rtl" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet" disabled>
+    <link id="bootstrap-rtl" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+        rel="stylesheet" disabled>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/dark-mode.css"><link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
-<body class="bg-black vh-100 d-flex align-items-center justify-content-center">
+
+<body class="bg-black min-vh-100 d-flex align-items-center justify-content-center py-5">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card rounded-0 border-0 p-5 bg-white shadow-lg">
-                    <div class="text-center mb-5">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="card rounded-0 border-0 p-4 bg-white shadow-lg">
+                    <div class="text-center mb-3">
                         <a href="index.html" class="d-inline-flex align-items-center mb-4">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2"><circle cx="20" cy="20" r="18" stroke="#E62B1E" stroke-width="2"/><path d="M20 10V30M14 16L20 10L26 16" stroke="#E62B1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
                             <span class="fw-bold fs-4 ls-1 text-dark">StageReady</span>
                         </a>
-                        <h2 class="fw-bold">Start Your Journey</h2>
-                        <p class="text-secondary small">Apply for the next StageReady cohort.</p>
+                        <h2 class="fw-bold mb-0">Start Your Journey</h2>
                     </div>
 
                     <form action="dashboard.html" class="needs-validation row g-3" novalidate>
-                        <div class="col-md-6">
-                            <label class="form-label small fw-bold text-uppercase">First Name</label>
-                            <input type="text" class="form-control rounded-0" placeholder="John" required>
-                            <div class="invalid-feedback">First name is required.</div>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label small fw-bold text-uppercase">Last Name</label>
-                            <input type="text" class="form-control rounded-0" placeholder="Doe" required>
-                            <div class="invalid-feedback">Last name is required.</div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-uppercase">Full Name</label>
+                            <input type="text" class="form-control rounded-0" placeholder="John Doe" required>
+                            <div class="invalid-feedback">Your name is required.</div>
                         </div>
                         <div class="col-12">
                             <label class="form-label small fw-bold text-uppercase">Email Address</label>
-                            <input type="email" class="form-control rounded-0" placeholder="speaker@example.com" required>
+                            <input type="email" class="form-control rounded-0" placeholder="speaker@example.com"
+                                required>
                             <div class="invalid-feedback">A valid email is required.</div>
                         </div>
                         <div class="col-12">
                             <label class="form-label small fw-bold text-uppercase">Password</label>
-                            <input type="password" class="form-control rounded-0" required>
+                            <input type="password" class="form-control rounded-0" required id="password">
                             <div class="invalid-feedback">Password must be at least 8 characters.</div>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label small fw-bold text-uppercase">Confirm Password</label>
+                            <input type="password" class="form-control rounded-0" required id="confirm_password">
+                            <div class="invalid-feedback">Please confirm your password.</div>
                         </div>
                         <div class="col-12">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" id="terms" required>
-                                <label class="form-check-label small" for="terms">I agree to the <a href="#" class="text-red">Terms of Service</a> and the speaker code of conduct.</label>
+                                <label class="form-check-label small" for="terms">I agree to the <a href="#"
+                                        class="text-red">Terms of Service</a> and the speaker code of conduct.</label>
                                 <div class="invalid-feedback">You must agree before applying.</div>
                             </div>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn-red w-100 py-3 mt-3">Create Speaker Account</button>
+                            <button type="submit" class="btn-red w-100 py-3 mt-2 mb-3">Create Speaker Account</button>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <button type="button"
+                                        class="btn btn-outline border-dark rounded-0 d-flex align-items-center justify-content-center gap-2 w-100 small px-2">
+                                        <i class="bi bi-google"></i> Google
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button"
+                                        class="btn btn-outline border-dark rounded-0 d-flex align-items-center justify-content-center gap-2 w-100 small px-2">
+                                        <i class="bi bi-linkedin"></i> LinkedIn
+                                    </button>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="mt-4 text-center col-12">
-                            <p class="small text-secondary mb-0">Already have an account? <a href="login.html" class="text-red fw-bold">Login to War Room</a></p>
+                            <p class="small text-secondary mb-0">Already have an account? <a href="login.html"
+                                    class="text-red fw-bold">Login to War Room</a></p>
                         </div>
                     </form>
                 </div>
@@ -80,4 +108,5 @@
         })()
     </script>
 </body>
+
 </html>

@@ -1,62 +1,146 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | StageReady TEDx Coach</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link id="bootstrap-rtl" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet" disabled>
+    <link id="bootstrap-rtl" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+        rel="stylesheet" disabled>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/dark-mode.css"><link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
+
 <body>
     <header class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2"><circle cx="20" cy="20" r="18" stroke="#E62B1E" stroke-width="2"/><path d="M20 10V30M14 16L20 10L26 16" stroke="#E62B1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
                 <span class="fw-bold fs-4 ls-1">StageReady</span>
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home2</a></li>
                     <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Programs</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link p-0" id="rtl-toggle">RTL</button>
-                    <button class="btn btn-link p-0" id="theme-toggle"><i class="bi bi-moon-fill"></i></button>
-                    <a href="login.html" class="nav-link fw-bold">Login</a>
-                    <a href="contact.html" class="btn-red">Book a Session</a>
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn-nav-outline" id="rtl-toggle">RTL</button>
+                    <button class="btn-nav-outline" id="theme-toggle"><i class="bi bi-moon-fill"></i></button>
+                    <a href="login.html" class="btn-nav-outline">Login</a>
+                    <a href="dashboard.html" class="btn-red">Dashboard</a>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero: Backstory Timeline -->
+        <!-- [NEW] Advisory Board Section -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">The Architecture Team</h2>
+                <p class="text-center text-secondary mb-5 mx-auto" style="max-width: 700px;">Marcus leads the strategy,
+                    but every world-class speech is supported by a team of narrative specialists, psychologists, and
+                    speechwriters.</p>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card border-0 rounded-0 shadow-sm overflow-hidden img-hover-scale">
+                            <img src="assets/img/team.png" alt="Creative Specialists" class="w-100">
+                            <div class="p-4">
+                                <h5 class="fw-bold mb-1">Rhetoric Team</h5>
+                                <p class="small text-secondary mb-0">Crafting the perfect cadence and linguistic
+                                    precision.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col text-center d-flex flex-column justify-content-center">
+                        <div class="p-4 border-start border-red">
+                            <h3 class="fw-bold mb-3">12+</h3>
+                            <p class="text-secondary">Years of combined experience in high-stakes communication.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card border-0 rounded-0 shadow-sm overflow-hidden img-hover-scale">
+                            <img src="assets/img/team.png" alt="Narrative Architects" class="w-100"
+                                style="filter: grayscale(100%);">
+                            <div class="p-4">
+                                <h5 class="fw-bold mb-1">Psychology Lab</h5>
+                                <p class="small text-secondary mb-0">Auditing every beat for audience retention and
+                                    impact.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [NEW] The Studio Experience -->
         <section class="section-padding bg-black text-white">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <h2 class="mb-4">The StageReady Studio</h2>
+                        <p class="fs-5 opacity-75 mb-4">Our HQ is a dedicated laboratory for speech delivery. Equipped
+                            with a professional stage simulator, 4K camera arrays, and acoustics designed to mimic grand
+                            auditoriums, this is where we turn comfort into mastery.</p>
+                        <div class="row g-3 mt-4">
+                            <div class="col-6">
+                                <div class="p-3 border border-secondary">
+                                    <h6 class="fw-bold mb-1 text-red">4K Arrays</h6>
+                                    <p class="small mb-0 opacity-50">Multi-angle feedback.</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-3 border border-secondary">
+                                    <h6 class="fw-bold mb-1 text-red">Acoustic Lab</h6>
+                                    <p class="small mb-0 opacity-50">Auditorium mimicry.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="img-hover-scale shadow-lg">
+                            <img src="assets/img/studio.png" alt="StageReady Coaching Studio" class="w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Hero: Backstory Timeline -->
+        <section class="section-padding bg-image-section bg-image-overlay hero-bg-image text-white">
             <div class="container text-center">
                 <h1 class="display-3 fw-bold mb-5">The Mission</h1>
-                <div class="row g-4 text-start">
+                <div class="row row-cols-1 row-cols-md-3 g-4 text-start">
                     <div class="col-md-4">
                         <div class="border-start border-red ps-4 py-3 h-100">
                             <h4 class="fw-bold text-red">2012</h4>
-                            <p class="small text-secondary mb-0">Delivered first keynote to 2,000 attendees. Realized the structural flaw in 90% of business talks.</p>
+                            <p class="small text-secondary mb-0">Delivered first keynote to 2,000 attendees. Realized
+                                the structural flaw in 90% of business talks.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="border-start border-red ps-4 py-3 h-100">
                             <h4 class="fw-bold text-red">2018</h4>
-                            <p class="small text-secondary mb-0">Coached 5 consecutive TEDx speakers to 1M+ views. Developed the '15-Log' rehearsal system.</p>
+                            <p class="small text-secondary mb-0">Coached 5 consecutive TEDx speakers to 1M+ views.
+                                Developed the '15-Log' rehearsal system.</p>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col">
                         <div class="border-start border-red ps-4 py-3 h-100">
                             <h4 class="fw-bold text-red">2026</h4>
-                            <p class="small text-secondary mb-0">StageReady launches as the definitive war room for authority voices on the global stage.</p>
+                            <p class="small text-secondary mb-0">StageReady launches as the definitive war room for
+                                authority voices on the global stage.</p>
                         </div>
                     </div>
                 </div>
@@ -67,26 +151,92 @@
         <section class="section-padding">
             <div class="container text-center">
                 <blockquote class="blockquote px-lg-5">
-                    <p class="display-6 fw-bold text-red">"An idea worth spreading is useless if the audience can't digest it in 18 minutes."</p>
-                    <footer class="blockquote-footer mt-3">Marcus Vane, <cite title="Source Title">Founder of StageReady</cite></footer>
+                    <p class="display-6 fw-bold text-red">"An idea worth spreading is useless if the audience can't
+                        digest it in 18 minutes."</p>
+                    <footer class="blockquote-footer mt-3">Marcus Vane, <cite title="Source Title">Founder of
+                            StageReady</cite></footer>
                 </blockquote>
+            </div>
+        </section>
+
+        <!-- [NEW] Founder Section -->
+        <section class="section-padding bg-black text-white">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5">
+                        <div class="img-hover-scale shadow-lg">
+                            <img src="assets/img/coach.png" alt="Marcus Vane" class="w-100">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <h2 class="mb-4">Meet Marcus Vane</h2>
+                        <p class="fs-5 mb-4">Marcus isn't just a coach; he's a narrative architect. With over a decade
+                            on world-renowned stages, he has mastered the art of high-stakes communication.</p>
+                        <p class="text-secondary mb-4">"My goal is simple: to ensure that when you step into that
+                            spotlight, your message isn't just heard—it's felt. Every word, every gesture, and every
+                            beat is crafted for maximum impact."</p>
+                        <div class="d-flex gap-4 mt-5">
+                            <div>
+                                <h4 class="text-red mb-0">150+</h4>
+                                <small>Speakers Coached</small>
+                            </div>
+                            <div>
+                                <h4 class="text-red mb-0">20+</h4>
+                                <small>TEDx Events Managed</small>
+                            </div>
+                            <div>
+                                <h4 class="text-red mb-0">5M+</h4>
+                                <small>Total Views</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [NEW] Core Values Grid -->
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="text-center mb-5">Our Philosophy</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-5">
+                    <div class="col text-center">
+                        <i class="bi bi-lightning-charge fs-1 text-red mb-3 d-block"></i>
+                        <h4>Brevity</h4>
+                        <p class="text-secondary">If you can't say it in 18 minutes, you don't know it well enough. We
+                            cut the fluff and keep the fire.</p>
+                    </div>
+                    <div class="col text-center">
+                        <i class="bi bi-brain fs-1 text-red mb-3 d-block"></i>
+                        <h4>Psychology</h4>
+                        <p class="text-secondary">We build speeches around how the human brain processes information and
+                            stores memory.</p>
+                    </div>
+                    <div class="col text-center">
+                        <i class="bi bi-eye fs-1 text-red mb-3 d-block"></i>
+                        <h4>Impact</h4>
+                        <p class="text-secondary">We don't aim for 'good'. We aim for the standing ovation and the
+                            global movement.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- 2x2 Credentials -->
         <section class="section-padding bg-light">
             <div class="container">
-                <div class="row g-4">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
                     <div class="col-md-6">
                         <div class="p-5 bg-white border border-opacity-10 shadow-sm h-100">
                             <h3 class="fw-bold mb-4">The Pedigree</h3>
-                            <p class="text-secondary">Certified Storytelling Consultant for 3 Fortune 500 CEOs. Guest lecturer at London School of Public Speaking.</p>
+                            <p class="text-secondary">Certified Storytelling Consultant for 3 Fortune 500 CEOs. Guest
+                                lecturer at London School of Public Speaking.</p>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col">
                         <div class="p-5 bg-white border border-opacity-10 shadow-sm h-100">
                             <h3 class="fw-bold mb-4">The Methodology</h3>
-                            <p class="text-secondary">Audience Psychology first. Syntax second. Movement third. We build the skeleton before the skin.</p>
+                            <p class="text-secondary">Audience Psychology first. Syntax second. Movement third. We build
+                                the skeleton before the skin.</p>
                         </div>
                     </div>
                 </div>
@@ -97,20 +247,78 @@
         <section class="py-5 border-top border-bottom">
             <div class="container text-center opacity-25">
                 <div class="row align-items-center g-5 justify-content-center">
-                    <div class="col-4 col-md-2"><h4 class="fw-bold mb-0">FORBES</h4></div>
-                    <div class="col-4 col-md-2"><h4 class="fw-bold mb-0">BBC</h4></div>
-                    <div class="col-4 col-md-2"><h4 class="fw-bold mb-0">WIRED</h4></div>
-                    <div class="col-4 col-md-2"><h4 class="fw-bold mb-0">HBR</h4></div>
+                    <div class="col-6 col-md-3">
+                        <h4 class="fw-bold mb-0">FORBES</h4>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h4 class="fw-bold mb-0">BBC</h4>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h4 class="fw-bold mb-0">WIRED</h4>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h4 class="fw-bold mb-0">HBR</h4>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-5 bg-black text-white text-center">
-        <p class="mb-0 opacity-50">© 2026 StageReady. Built for Impact.</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center mb-4" href="index.html">
+                        <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
+                        <span class="fw-bold fs-4 ls-1 text-white">StageReady</span>
+                    </a>
+                    <p class="text-secondary mb-4">Precision coaching for speakers who refuse to be forgotten. Inspired
+                        by the TEDx 18-minute rule.</p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="footer-social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4 text-white">Programs</h5>
+                    <ul class="nav flex-column gap-2">
+                        <li><a href="services.html">TEDx Full Prep</a></li>
+                        <li><a href="services.html">Keynote Sprint</a></li>
+                        <li><a href="services.html">Script Surgery</a></li>
+                        <li><a href="services.html">Stage Sim Day</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4 text-white">Resources</h5>
+                    <ul class="nav flex-column gap-2">
+                        <li><a href="blog.html">Speaker Blog</a></li>
+                        <li><a href="#">Speech Templates</a></li>
+                        <li><a href="#">TEDx Checklist</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-4 text-white">Newsletter</h5>
+                    <p class="text-secondary small mb-4">Get the "Idea Worth Spreading" weekly briefing.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control rounded-0 bg-transparent text-white border-secondary"
+                            placeholder="Email Address">
+                        <button type="submit" class="btn btn-red px-3">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="text-secondary mb-3 mb-md-0">© 2026 StageReady. All rights reserved.</p>
+                <a href="#" class="btn btn-link text-white p-0"><i class="bi bi-arrow-up"></i> Back to top</a>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

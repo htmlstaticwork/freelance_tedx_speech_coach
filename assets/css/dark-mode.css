@@ -59,3 +59,13 @@ body.dark-theme .offcanvas {
     background-color: var(--bg-color);
     color: var(--text-color);
 }
+
+body.dark-theme .btn-nav-outline {
+    border-color: rgba(255,255,255,0.3);
+    color: #FFF;
+}
+
+body.dark-theme .btn-nav-outline:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}

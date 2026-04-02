@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StageReady | TEDx & Keynote Speech Coach</title>
-    <meta name="description" content="Master the stage with StageReady. Specialized coaching for TEDx, keynotes, and high-stakes public speaking.">
-    
+    <meta name="description"
+        content="Master the stage with StageReady. Specialized coaching for TEDx, keynotes, and high-stakes public speaking.">
+
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎙️</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link id="bootstrap-rtl" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet" disabled>
-    
+    <link id="bootstrap-rtl" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+        rel="stylesheet" disabled>
+
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
@@ -26,6 +31,7 @@
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
+
 <body>
 
     <!-- Header -->
@@ -33,11 +39,7 @@
         <div class="container">
             <!-- Logo -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                    <circle cx="20" cy="20" r="18" stroke="#E62B1E" stroke-width="2"/>
-                    <path d="M20 10V30M14 16L20 10L26 16" stroke="#E62B1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M20 15C18.3431 15 17 16.3431 17 18V22C17 23.6569 18.3431 25 20 25C21.6569 25 23 23.6569 23 22V18C23 16.3431 21.6569 15 20 15Z" fill="#E62B1E"/>
-                </svg>
+                <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
                 <span class="fw-bold fs-4 ls-1">StageReady</span>
             </a>
 
@@ -46,7 +48,8 @@
                 <button class="btn btn-link p-2" id="theme-toggle-mobile" aria-label="Toggle Theme">
                     <i class="bi bi-moon-fill text-dark"></i>
                 </button>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                    aria-controls="mobileMenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
@@ -55,19 +58,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home2</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Programs</a></li>
                     <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link p-0" id="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
-                    <button class="btn btn-link p-0" id="theme-toggle" title="Toggle Theme">
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn-nav-outline" id="rtl-toggle" title="Toggle RTL/LTR">RTL</button>
+                    <button class="btn-nav-outline" id="theme-toggle" title="Toggle Theme">
                         <i class="bi bi-moon-fill"></i>
                     </button>
-                    <a href="login.html" class="nav-link fw-bold">Login</a>
-                    <a href="contact.html" class="btn-red">Book a Session</a>
+                    <a href="login.html" class="btn-nav-outline">Login</a>
+                    <a href="dashboard.html" class="btn-red">Dashboard</a>
                 </div>
             </div>
         </div>
@@ -82,6 +86,7 @@
         <div class="offcanvas-body">
             <ul class="nav flex-column mb-4">
                 <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="home-2.html">Home2</a></li>
                 <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="services.html">Programs</a></li>
                 <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="pricing.html">Pricing</a></li>
@@ -89,13 +94,14 @@
                 <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="contact.html">Contact</a></li>
             </ul>
             <a href="login.html" class="btn btn-outline w-100 mb-3">Login</a>
-            <a href="contact.html" class="btn-red w-100">Book a Session</a>
+            <a href="dashboard.html" class="btn-red w-100">Dashboard</a>
         </div>
     </div>
 
     <main>
         <!-- S1 - Countdown Clock -->
-        <section class="section-padding bg-black text-white d-flex align-items-center justify-content-center text-center vh-100">
+        <section
+            class="section-padding d-flex align-items-center justify-content-center text-center vh-100 bg-image-section bg-image-overlay hero-bg-image text-white">
             <div class="container" data-aos="fade-up">
                 <h1 class="mb-4">Your TEDx Talk Is In</h1>
                 <div id="countdown-timer" class="countdown-timer mb-4">90d:00h:00m:00s</div>
@@ -107,7 +113,7 @@
         <!-- S2 - Speech Anatomy Breakdown -->
         <section id="anatomy" class="section-padding">
             <div class="container">
-                <div class="row mb-5 text-center">
+                <div class="row row-cols-1 g-5 mb-5 text-center">
                     <div class="col-12">
                         <h2 class="mb-3">The 18-minute Rule</h2>
                         <p class="text-secondary ls-1">Building an idea worth spreading, minute by minute.</p>
@@ -122,7 +128,8 @@
                                 <div class="speech-map-progress" style="width: 8.3%"></div>
                             </div>
                             <h4 class="h5">The Hook</h4>
-                            <p class="small text-secondary">Challenge a status quo. Open a loop. Grab them in 90 seconds or lose them forever.</p>
+                            <p class="small text-secondary">Challenge a status quo. Open a loop. Grab them in 90 seconds
+                                or lose them forever.</p>
                         </div>
                     </div>
                     <!-- Anatomy Map Item -->
@@ -133,7 +140,8 @@
                                 <div class="speech-map-progress" style="width: 27.7%"></div>
                             </div>
                             <h4 class="h5">The Problem</h4>
-                            <p class="small text-secondary">Deep dive into the 'What Is'. Make the audience feel the pain of the current reality.</p>
+                            <p class="small text-secondary">Deep dive into the 'What Is'. Make the audience feel the
+                                pain of the current reality.</p>
                         </div>
                     </div>
                     <!-- Anatomy Map Item -->
@@ -144,7 +152,8 @@
                                 <div class="speech-map-progress" style="width: 55.5%"></div>
                             </div>
                             <h4 class="h5">The Insight & Evidence</h4>
-                            <p class="small text-secondary">Introduce your unique solution. Back it up with data, stories, and the 'Aha!' moment.</p>
+                            <p class="small text-secondary">Introduce your unique solution. Back it up with data,
+                                stories, and the 'Aha!' moment.</p>
                         </div>
                     </div>
                     <!-- Anatomy Map Item -->
@@ -155,7 +164,8 @@
                                 <div class="speech-map-progress" style="width: 91.6%"></div>
                             </div>
                             <h4 class="h5">Call to Change</h4>
-                            <p class="small text-secondary">What do you want them to do? Build the bridge between your idea and their action.</p>
+                            <p class="small text-secondary">What do you want them to do? Build the bridge between your
+                                idea and their action.</p>
                         </div>
                     </div>
                     <!-- Anatomy Map Item -->
@@ -166,7 +176,8 @@
                                 <div class="speech-map-progress" style="width: 100%"></div>
                             </div>
                             <h4 class="h5">The Closing Line</h4>
-                            <p class="small text-secondary">The mic drop. Leave them with a single, unshakeable thought.</p>
+                            <p class="small text-secondary">The mic drop. Leave them with a single, unshakeable thought.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -177,15 +188,21 @@
         <section class="section-padding bg-black text-white">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-6 mb-5 mb-lg-0 pe-lg-5 border-end border-secondary border-opacity-25">
+                    <div class="col-lg-5 mb-5 mb-lg-0 pe-lg-5">
+                        <div class="img-hover-scale">
+                            <img src="assets/img/speaker.png" alt="Dr. Priya on stage" class="w-100 grayscale-on-hover">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
                         <p class="text-secondary small fw-bold text-uppercase ls-1">The Transformation</p>
                         <h3>Dr. Priya, 4 months ago</h3>
-                        <p class="fs-5 opacity-50">"Terrified of public speaking. Couldn't finish a 5-minute draft without a panic attack. Her 'Idea Worth Spreading' was buried under academic jargon."</p>
-                    </div>
-                    <div class="col-lg-6 ps-lg-5">
+                        <p class="fs-5 opacity-50 mb-4">"Terrified of public speaking. Couldn't finish a 5-minute draft
+                            without a panic attack. Her 'Idea Worth Spreading' was buried under academic jargon."</p>
+                        <hr class="border-secondary opacity-25 my-4">
                         <p class="text-red small fw-bold text-uppercase ls-1">Stage Ready</p>
                         <h3>Today — TEDxBangalore</h3>
-                        <p class="fs-4">"1.2M views. 3 keynote invites. A standing ovation that lasted 45 seconds. She didn't just give a talk; she started a movement."</p>
+                        <p class="fs-4">"1.2M views. 3 keynote invites. A standing ovation that lasted 45 seconds. She
+                            didn't just give a talk; she started a movement."</p>
                     </div>
                 </div>
             </div>
@@ -234,8 +251,8 @@
         <!-- S5 - Stats Strip -->
         <section class="py-5 bg-black text-white border-top border-bottom border-secondary border-opacity-25">
             <div class="container">
-                <div class="row g-4 text-center">
-                    <div class="col-6 col-md-3">
+                <div class="row row-cols-2 row-cols-md-4 g-4 text-center">
+                    <div class="col">
                         <div class="fs-1 fw-bold text-red">47</div>
                         <div class="small fw-bold ls-1 text-uppercase">Talks Coached</div>
                     </div>
@@ -247,9 +264,94 @@
                         <div class="fs-1 fw-bold text-red">6</div>
                         <div class="small fw-bold ls-1 text-uppercase">Continents</div>
                     </div>
-                    <div class="col-6 col-md-3">
+                    <div class="col">
                         <div class="fs-1 fw-bold text-red">92%</div>
                         <div class="small fw-bold ls-1 text-uppercase">Standing Ovation</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [NEW] S6 - Testimonials -->
+        <section class="section-padding bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Voices of Impact</h2>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="testimonial-card">
+                            <i class="bi bi-quote fs-1 text-red mb-3 d-block"></i>
+                            <p class="fs-5 mb-4">"StageReady didn't just fix my script; they found the soul of my
+                                message. My TEDx talk changed my career overnight."</p>
+                            <div class="d-flex align-items-center gap-3">
+                                <div>
+                                    <h5 class="mb-0">Sarah Jenkins</h5>
+                                    <small class="text-secondary">AI Researcher, TEDxLondon</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="testimonial-card">
+                            <i class="bi bi-quote fs-1 text-red mb-3 d-block"></i>
+                            <p class="fs-5 mb-4">"The 15-log simulation was grueling, but when I stepped onto that red
+                                circle, I felt zero nerves. Pure mastery."</p>
+                            <div class="d-flex align-items-center gap-3">
+                                <div>
+                                    <h5 class="mb-0">David Chen</h5>
+                                    <small class="text-secondary">CEO, ClimateAction</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="testimonial-card">
+                            <i class="bi bi-quote fs-1 text-red mb-3 d-block"></i>
+                            <p class="fs-5 mb-4">"Precision coaching at its finest. They understand audience psychology
+                                better than anyone in the industry."</p>
+                            <div class="d-flex align-items-center gap-3">
+                                <div>
+                                    <h5 class="mb-0">Elena Rossi</h5>
+                                    <small class="text-secondary">Author & Keynote Speaker</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- [NEW] S7 - The 3-Step Process -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <h2 class="mb-4">The StageReady Path</h2>
+                        <p class="text-secondary mb-5">We don't teach you to speak. We teach you to be heard. Our
+                            three-phase system is designed for high-stakes impact.</p>
+
+                        <div class="process-step">
+                            <span class="process-step-number">01</span>
+                            <h4>Clarity & Architecture</h4>
+                            <p class="text-secondary">We strip away the noise to find your 'Idea Worth Spreading' and
+                                build a bulletproof narrative structure.</p>
+                        </div>
+                        <div class="process-step">
+                            <span class="process-step-number">02</span>
+                            <h4>Psychology & Hook</h4>
+                            <p class="text-secondary">We redesign your opening and closing for maximum retention and
+                                emotional resonance.</p>
+                        </div>
+                        <div class="process-step">
+                            <span class="process-step-number">03</span>
+                            <h4>The 15-Log Simulation</h4>
+                            <p class="text-secondary">Hyper-realistic rehearsals that wire the speech into your muscle
+                                memory for a flawless delivery.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="img-hover-scale shadow-lg">
+                            <img src="assets/img/stage.png" alt="TEDx Stage View" class="w-100">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -277,13 +379,11 @@
             <div class="row g-5">
                 <div class="col-lg-4">
                     <a class="navbar-brand d-flex align-items-center mb-4" href="#">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
-                            <circle cx="20" cy="20" r="18" stroke="#E62B1E" stroke-width="2"/>
-                            <path d="M20 10V30M14 16L20 10L26 16" stroke="#E62B1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
                         <span class="fw-bold fs-4 ls-1 text-white">StageReady</span>
                     </a>
-                    <p class="text-secondary mb-4">Precision coaching for speakers who refuse to be forgotten. Inspired by the TEDx 18-minute rule.</p>
+                    <p class="text-secondary mb-4">Precision coaching for speakers who refuse to be forgotten. Inspired
+                        by the TEDx 18-minute rule.</p>
                     <div class="d-flex gap-3 fs-5">
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
                         <a href="#"><i class="bi bi-linkedin"></i></a>
@@ -313,7 +413,8 @@
                     <h5 class="fw-bold mb-4 text-white">Newsletter</h5>
                     <p class="text-secondary small mb-4">Get the "Idea Worth Spreading" weekly briefing.</p>
                     <form class="d-flex gap-2">
-                        <input type="email" class="form-control rounded-0 bg-transparent text-white border-secondary" placeholder="Email Address">
+                        <input type="email" class="form-control rounded-0 bg-transparent text-white border-secondary"
+                            placeholder="Email Address">
                         <button type="submit" class="btn btn-red px-3">Join</button>
                     </form>
                 </div>
@@ -329,4 +430,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

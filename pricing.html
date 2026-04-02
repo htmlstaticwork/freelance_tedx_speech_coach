@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing | StageReady TEDx Coach</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link id="bootstrap-rtl" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet" disabled>
+    <link id="bootstrap-rtl" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+        rel="stylesheet" disabled>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/css/style.css"><link rel="stylesheet" href="assets/css/dark-mode.css"><link rel="stylesheet" href="assets/css/rtl.css">
+    <link rel="icon" type="image/svg+xml" href="assets/img/logo.svg">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
+
 <body>
     <header class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2"><circle cx="20" cy="20" r="18" stroke="#E62B1E" stroke-width="2"/><path d="M20 10V30M14 16L20 10L26 16" stroke="#E62B1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
                 <span class="fw-bold fs-4 ls-1">StageReady</span>
             </a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home-2.html">Home2</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Programs</a></li>
                     <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
-                <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link p-0" id="rtl-toggle">RTL</button>
-                    <button class="btn btn-link p-0" id="theme-toggle"><i class="bi bi-moon-fill"></i></button>
-                    <a href="login.html" class="nav-link fw-bold">Login</a>
-                    <a href="contact.html" class="btn-red">Book a Session</a>
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn-nav-outline" id="rtl-toggle">RTL</button>
+                    <button class="btn-nav-outline" id="theme-toggle"><i class="bi bi-moon-fill"></i></button>
+                    <a href="login.html" class="btn-nav-outline">Login</a>
+                    <a href="dashboard.html" class="btn-red">Dashboard</a>
                 </div>
             </div>
         </div>
@@ -41,14 +51,16 @@
                 <h1 class="display-4 fw-bold">Investment Tiers</h1>
                 <p class="text-secondary">Quality coaching is an investment in your authority voice.</p>
             </div>
-            
-            <div class="row g-4 justify-content-center">
+
+            <div class="row g-4 justify-content-center row-cols-1 row-cols-lg-2">
                 <!-- 2-column plans -->
-                <div class="col-lg-5">
+                <div class="col-xl-5">
                     <div class="card h-100 rounded-0 border bg-light p-5 transition">
                         <h4 class="fw-bold mb-3 ls-1">The Sprint</h4>
-                        <div class="fs-1 fw-bold text-red mb-3">$2,499<span class="fs-6 text-dark opacity-50 fw-normal"> / 4 Weeks</span></div>
-                        <p class="text-secondary mb-4">For speakers with an existing script who need to maximize delivery effectiveness and stage presence.</p>
+                        <div class="fs-1 fw-bold text-red mb-3">$2,499<span class="fs-6 text-dark opacity-50 fw-normal">
+                                / 4 Weeks</span></div>
+                        <p class="text-secondary mb-4">For speakers with an existing script who need to maximize
+                            delivery effectiveness and stage presence.</p>
                         <ul class="nav flex-column gap-3 mb-5 fs-6">
                             <li><i class="bi bi-check text-red"></i> 4x 1-on-1 Sessions</li>
                             <li><i class="bi bi-check text-red"></i> Script Anatomy Audit</li>
@@ -58,29 +70,199 @@
                         <a href="contact.html" class="btn btn-outline w-100 mt-auto">Choose Sprint</a>
                     </div>
                 </div>
-                <div class="col-lg-5">
-                    <div class="card h-100 rounded-0 border-0 bg-black text-white p-5 shadow-lg">
+                <div class="col-xl-5">
+                    <div class="card h-100 rounded-0 border-0 bg-black text-white p-5 shadow-lg position-relative">
+                        <div class="pricing-badge">MOST POPULAR</div>
                         <h4 class="fw-bold mb-3 ls-1">The Full Prep</h4>
-                        <div class="fs-1 fw-bold text-red mb-3">$7,999<span class="fs-6 text-white opacity-50 fw-normal"> / 16 Weeks</span></div>
-                        <p class="text-secondary mb-4">The absolute choice for TEDx and high-stakes opening keynotes. Comprehensive transformation.</p>
+                        <div class="fs-1 fw-bold text-red mb-3">$7,999<span
+                                class="fs-6 text-white opacity-50 fw-normal"> / 16 Weeks</span></div>
+                        <p class="text-secondary mb-4">The absolute choice for TEDx and high-stakes opening keynotes.
+                            Comprehensive transformation.</p>
                         <ul class="nav flex-column gap-3 mb-5 fs-6 text-white text-opacity-75">
                             <li><i class="bi bi-check text-red"></i> 16x 1-on-1 Sessions</li>
                             <li><i class="bi bi-check text-red"></i> End-to-End Narrative DNA Design</li>
                             <li><i class="bi bi-check text-red"></i> 15 Rehearsal Logs</li>
                             <li><i class="bi bi-check text-red"></i> Stage Sim Day Included</li>
                         </ul>
-                        <a href="contact.html" class="btn-red w-100 mt-auto">Most Popular Choice</a>
+                        <a href="contact.html" class="btn-red w-100 mt-auto">Get Started</a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <footer class="py-5 bg-black text-white text-center">
-        <p class="mb-0 opacity-50">© 2026 StageReady. Built for Impact.</p>
+    <!-- [NEW] Corporate Team Coaching -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="img-hover-scale shadow-lg">
+                        <img src="assets/img/corporate.png" alt="Corporate Team Coaching" class="w-100">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Corporate & Leadership Teams</h2>
+                    <p class="fs-5 text-secondary mb-4">Transform your executive board into a powerhouse of elite
+                        communicators. Custom-built intensives for multiple speakers preparing for a single corporate
+                        summit or global event.</p>
+                    <ul class="nav flex-column gap-3 mb-5 fw-bold">
+                        <li><i class="bi bi-check-circle-fill text-red me-2"></i> Dedicated Narrative Architect</li>
+                        <li><i class="bi bi-check-circle-fill text-red me-2"></i> Unified Brand Voice Alignment</li>
+                        <li><i class="bi bi-check-circle-fill text-red me-2"></i> Group Rhetoric Workshops</li>
+                    </ul>
+                    <a href="contact.html" class="btn-red px-5">Inquire for Teams</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [NEW] Scholarship Program -->
+    <section class="section-padding bg-black text-white">
+        <div class="container">
+            <div class="row align-items-center g-5 flex-lg-row-reverse">
+                <div class="col-lg-6">
+                    <div class="img-hover-scale shadow-lg">
+                        <img src="assets/img/scholarship.png" alt="Voice Scholarship Program" class="w-100">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="mb-4">The Impact Scholarship</h2>
+                    <p class="fs-5 opacity-75 mb-4">We believe that wealth should not be a barrier to spreading a
+                        world-changing idea. Every year, we offer two full-ride 'TEDx Full Prep' scholarships to
+                        activists and visionaries from underrepresented communities.</p>
+                    <p class="text-red fw-bold mb-5 ls-1">Application window opens December 2026.</p>
+                    <a href="contact.html" class="btn btn-outline text-white border-white px-5">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [NEW] FAQ Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion accordion-flush" id="pricingFAQ">
+                        <div class="accordion-item bg-transparent border-bottom border-dark border-opacity-10">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-uppercase ls-1 py-4"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Why 16 weeks for the Full Prep?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body text-secondary pb-4">
+                                    Greatness takes time. 16 weeks allows us to deep-dive into audience psychology,
+                                    build a bulletproof narrative structure, and wire the speech into your muscle memory
+                                    through 15 structured rehearsal logs.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent border-bottom border-dark border-opacity-10">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-uppercase ls-1 py-4"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Do you guarantee a TEDx spot?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body text-secondary pb-4">
+                                    While we don't control the independent selection committees of TEDx events, our
+                                    speakers have a 85% success rate in getting accepted after our Narrative DNA design
+                                    phase.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent border-bottom border-dark border-opacity-10">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-uppercase ls-1 py-4"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Can I upgrade from Sprint to Full Prep?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body text-secondary pb-4">
+                                    Absolutely. Many speakers start with a Sprint to audit their current script and
+                                    realize they want the full transformative experience. You only pay the difference.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item bg-transparent border-bottom border-dark border-opacity-10">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-bold text-uppercase ls-1 py-4"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Is the Stage Sim Day in-person?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body text-secondary pb-4">
+                                    We offer both in-person (London/Dubai/Mumbai) and high-fidelity virtual simulations
+                                    using professional stage lighting and multi-camera setups.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <a class="navbar-brand d-flex align-items-center mb-4" href="index.html">
+                        <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
+                        <span class="fw-bold fs-4 ls-1 text-white">StageReady</span>
+                    </a>
+                    <p class="text-secondary mb-4">Precision coaching for speakers who refuse to be forgotten. Inspired
+                        by the TEDx 18-minute rule.</p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#" class="footer-social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-youtube"></i></a>
+                        <a href="#" class="footer-social-link"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4 text-white">Programs</h5>
+                    <ul class="nav flex-column gap-2">
+                        <li><a href="services.html">TEDx Full Prep</a></li>
+                        <li><a href="services.html">Keynote Sprint</a></li>
+                        <li><a href="services.html">Script Surgery</a></li>
+                        <li><a href="services.html">Stage Sim Day</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 class="fw-bold mb-4 text-white">Resources</h5>
+                    <ul class="nav flex-column gap-2">
+                        <li><a href="blog.html">Speaker Blog</a></li>
+                        <li><a href="#">Speech Templates</a></li>
+                        <li><a href="#">TEDx Checklist</a></li>
+                        <li><a href="contact.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold mb-4 text-white">Newsletter</h5>
+                    <p class="text-secondary small mb-4">Get the "Idea Worth Spreading" weekly briefing.</p>
+                    <form class="d-flex gap-2">
+                        <input type="email" class="form-control rounded-0 bg-transparent text-white border-secondary"
+                            placeholder="Email Address">
+                        <button type="submit" class="btn btn-red px-3">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="text-secondary mb-3 mb-md-0">© 2026 StageReady. All rights reserved.</p>
+                <a href="#" class="btn btn-link text-white p-0"><i class="bi bi-arrow-up"></i> Back to top</a>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>
