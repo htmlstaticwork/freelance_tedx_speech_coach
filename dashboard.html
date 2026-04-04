@@ -90,6 +90,50 @@
             display: block;
         }
 
+        .sidebar .btn-nav-outline {
+            border-color: rgba(255,255,255,0.35);
+            color: #fff;
+        }
+        .sidebar .btn-nav-outline i {
+            color: inherit;
+        }
+
+        .dashboard-hamburger {
+            color: #000;
+        }
+        body.dark-theme .dashboard-hamburger {
+            color: #fff;
+        }
+
+        .profile-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+
+        body.dark-theme .main-content .form-control,
+        body.dark-theme .main-content .form-select,
+        body.dark-theme .main-content textarea,
+        body.dark-theme .main-content .input-group-text,
+        body.dark-theme .modal-content .form-control,
+        body.dark-theme .modal-content .form-select,
+        body.dark-theme .modal-content textarea,
+        body.dark-theme .modal-content .input-group-text {
+            color: #fff;
+        }
+        body.dark-theme .main-content .form-control::placeholder,
+        body.dark-theme .main-content textarea::placeholder,
+        body.dark-theme .modal-content .form-control::placeholder,
+        body.dark-theme .modal-content textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        body.dark-theme .modal .btn-close {
+            filter: invert(1) grayscale(1);
+        }
+
         @media (max-width: 1100px) {
             .sidebar { transform: translateX(-100%); }
             [dir="rtl"] .sidebar { transform: translateX(100%); }
@@ -105,19 +149,18 @@
         <aside class="sidebar" id="dashboardSidebar">
             <div class="p-4 mb-4">
                 <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
-                <span class="fw-bold fs-4 ls-1">StageReady</span>
+                <img src="assets/img/weblogo.svg" alt="StageReady" width="170" height="40">
             </a>
             </div>
 
             <nav class="nav flex-column">
-                <div class="nav-link-dash active" onclick="switchTab('overview')"><i class="bi bi-grid-fill"></i> Overview</div>
-                <div class="nav-link-dash" onclick="switchTab('sessions')"><i class="bi bi-camera-video-fill"></i> Sessions</div>
-                <div class="nav-link-dash" onclick="switchTab('drafts')"><i class="bi bi-file-earmark-text-fill"></i> Speech Drafts</div>
-                <div class="nav-link-dash" onclick="switchTab('rehearsal')"><i class="bi bi-stopwatch-fill"></i> Rehearsal Log</div>
-                <div class="nav-link-dash" onclick="switchTab('calendar')"><i class="bi bi-calendar3"></i> Calendar</div>
-                <div class="nav-link-dash" onclick="switchTab('resources')"><i class="bi bi-journal-bookmark-fill"></i> Resources</div>
-                <div class="nav-link-dash mt-auto" onclick="switchTab('settings')"><i class="bi bi-gear-fill"></i> Settings</div>
+                <div class="nav-link-dash active" data-tab="overview" data-title="Overview" onclick="switchTab('overview')"><i class="bi bi-grid-fill"></i> Overview</div>
+                <div class="nav-link-dash" data-tab="sessions" data-title="Sessions" onclick="switchTab('sessions')"><i class="bi bi-camera-video-fill"></i> Sessions</div>
+                <div class="nav-link-dash" data-tab="drafts" data-title="Speech Drafts" onclick="switchTab('drafts')"><i class="bi bi-file-earmark-text-fill"></i> Speech Drafts</div>
+                <div class="nav-link-dash" data-tab="rehearsal" data-title="Rehearsal Log" onclick="switchTab('rehearsal')"><i class="bi bi-stopwatch-fill"></i> Rehearsal Log</div>
+                <div class="nav-link-dash" data-tab="calendar" data-title="Calendar" onclick="switchTab('calendar')"><i class="bi bi-calendar3"></i> Calendar</div>
+                <div class="nav-link-dash" data-tab="resources" data-title="Resources" onclick="switchTab('resources')"><i class="bi bi-journal-bookmark-fill"></i> Resources</div>
+                <div class="nav-link-dash mt-auto" data-tab="settings" data-title="Settings" onclick="switchTab('settings')"><i class="bi bi-gear-fill"></i> Settings</div>
                 <a href="index.html" class="nav-link-dash text-danger"><i class="bi bi-box-arrow-right"></i> Logout</a>
             </nav>
 
@@ -134,7 +177,7 @@
             <!-- Top Header -->
             <div class="d-flex justify-content-between align-items-center mb-5">
                 <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-link text-white d-xl-none p-0" onclick="toggleSidebar()"><i class="bi bi-list fs-2"></i></button>
+                    <button class="btn btn-link d-xl-none p-0 dashboard-hamburger" onclick="toggleSidebar()"><i class="bi bi-list fs-2"></i></button>
                     <h2 class="fw-bold mb-0" id="currentTabTitle">Overview</h2>
                 </div>
                 <div class="d-flex align-items-center gap-3">
@@ -142,7 +185,7 @@
                         <div class="fw-bold small">Dr. Priya Sharma</div>
                         <div class="text-secondary small">TEDxBangalore Speaker</div>
                     </div>
-                    <div class="rounded-circle bg-red d-flex align-items-center justify-content-center text-white fw-bold" style="width: 40px; height: 40px;">P</div>
+                    <img src="assets/img/speaker.png" alt="Profile" class="profile-avatar">
                 </div>
             </div>
 
@@ -220,7 +263,7 @@
                                     <td class="fw-bold text-red">Oct 24, 2026</td>
                                     <td>Final Stage Simulation</td>
                                     <td>Marcus Vane</td>
-                                    <td><span class="badge bg-success">Confirmed</span></td>
+                                    <td><span class="badge bg-success text-white">Confirmed</span></td>
                                     <td><button class="btn btn-sm btn-red">Join Call</button></td>
                                 </tr>
                                 <tr>
@@ -253,11 +296,11 @@
                             <ul class="nav flex-column gap-3">
                                 <li class="d-flex justify-content-between align-items-center p-3 border-bottom">
                                     <div><div class="fw-bold small">Draft_V7_Surgery.pdf</div><div class="small text-secondary">Oct 14, 2026</div></div>
-                                    <span class="badge bg-red">Feedback Ready</span>
+                                    <span class="badge bg-red text-white">Feedback Ready</span>
                                 </li>
                                 <li class="d-flex justify-content-between align-items-center p-3 border-bottom">
                                     <div><div class="fw-bold small">Draft_V6_Core.pdf</div><div class="small text-secondary">Oct 07, 2026</div></div>
-                                    <span class="badge bg-secondary">Reviewed</span>
+                                    <span class="badge bg-secondary text-white">Reviewed</span>
                                 </li>
                             </ul>
                         </div>
@@ -265,15 +308,415 @@
                 </div>
             </div>
 
+            <!-- Rehearsal Log Tab -->
+            <div id="rehearsal" class="tab-pane-custom">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4">
+                            <h5 class="fw-bold mb-3">Rehearsal Targets</h5>
+                            <div class="d-flex justify-content-between align-items-end mb-2">
+                                <div class="small text-secondary">Logged</div>
+                                <div class="fs-3 fw-bold text-red"><span id="rehearsalCount">12</span>/<span id="rehearsalGoal">15</span></div>
+                            </div>
+                            <div class="progress rounded-0 mb-3" style="height: 10px;">
+                                <div class="progress-bar bg-red" id="rehearsalProgress" style="width: 80%"></div>
+                            </div>
+                            <div class="small text-secondary">Aim for 3 full runs per week until talk day.</div>
+                            <button class="btn btn-red w-100 rounded-0 mt-4" data-bs-toggle="modal" data-bs-target="#rehearsalEntryModal" id="addEntryBtn">
+                                <i class="bi bi-plus-lg me-2"></i>Add Entry
+                            </button>
+                            <button class="btn btn-outline-secondary w-100 rounded-0 mt-2" id="exportRehearsalsBtn">
+                                <i class="bi bi-download me-2"></i>Export CSV
+                            </button>
+                        </div>
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4 mt-4">
+                            <h6 class="fw-bold mb-3">Today’s Focus</h6>
+                            <ul class="nav flex-column gap-2 small">
+                                <li class="d-flex gap-2"><i class="bi bi-check2-circle text-red"></i><span>Remove filler words in transitions</span></li>
+                                <li class="d-flex gap-2"><i class="bi bi-check2-circle text-red"></i><span>Hold silence after key lines</span></li>
+                                <li class="d-flex gap-2"><i class="bi bi-check2-circle text-red"></i><span>Enter the red circle with intention</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4">
+                            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-3">
+                                <h5 class="fw-bold mb-0">Rehearsal Log</h5>
+                                <div class="input-group" style="max-width: 320px;">
+                                    <span class="input-group-text rounded-0 bg-transparent text-secondary border-secondary border-opacity-25"><i class="bi bi-search"></i></span>
+                                    <input type="text" class="form-control rounded-0 bg-transparent border-secondary border-opacity-25" placeholder="Search by focus or notes" id="rehearsalSearch">
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table align-middle" id="rehearsalTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Duration</th>
+                                            <th>Focus</th>
+                                            <th>Self-rating</th>
+                                            <th>Notes</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="rehearsalTbody">
+                                        <tr>
+                                            <td class="fw-bold text-red">Oct 14, 2026</td>
+                                            <td>18 min</td>
+                                            <td>Opening hook</td>
+                                            <td><span class="badge bg-secondary text-white">4/5</span></td>
+                                            <td class="text-secondary small">Cleaner start, watch pacing line 3.</td>
+                                            <td><button class="btn btn-sm btn-outline-secondary" type="button">Attach Video</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-secondary">Oct 12, 2026</td>
+                                            <td>18 min</td>
+                                            <td>Story arc</td>
+                                            <td><span class="badge bg-secondary text-white">3/5</span></td>
+                                            <td class="text-secondary small">Middle section ran long. Cut 30 seconds.</td>
+                                            <td><button class="btn btn-sm btn-outline-secondary" type="button">Attach Video</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-secondary">Oct 10, 2026</td>
+                                            <td>16 min</td>
+                                            <td>Body language</td>
+                                            <td><span class="badge bg-secondary text-white">4/5</span></td>
+                                            <td class="text-secondary small">Better gestures; reduce swaying.</td>
+                                            <td><button class="btn btn-sm btn-outline-secondary" type="button">Attach Video</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="small text-secondary mt-3" id="rehearsalEmptyState" style="display:none;">No entries match your search.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Tab -->
+            <div id="calendar" class="tab-pane-custom">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4">
+                            <h5 class="fw-bold mb-4">Upcoming</h5>
+                            <div class="table-responsive">
+                                <table class="table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>Event</th>
+                                            <th>Coach</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="fw-bold text-red">Oct 24, 2026</td>
+                                            <td>7:30 PM</td>
+                                            <td>Final Stage Simulation</td>
+                                            <td>Marcus Vane</td>
+                                            <td><span class="badge bg-success text-white">Confirmed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-secondary">Oct 21, 2026</td>
+                                            <td>6:15 AM</td>
+                                            <td>Full 18-min Run</td>
+                                            <td>Self</td>
+                                            <td><span class="badge bg-secondary text-white">Planned</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-secondary">Oct 19, 2026</td>
+                                            <td>7:30 PM</td>
+                                            <td>Voice & Pace Drill (15m)</td>
+                                            <td>Self</td>
+                                            <td><span class="badge bg-secondary text-white">Planned</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="d-flex flex-column flex-md-row gap-2 mt-3">
+                                <button class="btn btn-red rounded-0"><i class="bi bi-calendar-plus me-2"></i>Add Rehearsal Slot</button>
+                                <button class="btn btn-outline-secondary rounded-0"><i class="bi bi-bell me-2"></i>Reminders</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4 mb-4">
+                            <h5 class="fw-bold mb-3">This Week Plan</h5>
+                            <ul class="nav flex-column gap-3">
+                                <li class="d-flex justify-content-between border-bottom pb-3">
+                                    <div>
+                                        <div class="fw-bold">Mon</div>
+                                        <div class="small text-secondary">Voice drill + transitions</div>
+                                    </div>
+                                    <span class="badge bg-dark text-secondary">15 min</span>
+                                </li>
+                                <li class="d-flex justify-content-between border-bottom pb-3">
+                                    <div>
+                                        <div class="fw-bold">Wed</div>
+                                        <div class="small text-secondary">Full run (record)</div>
+                                    </div>
+                                    <span class="badge bg-dark text-secondary">18 min</span>
+                                </li>
+                                <li class="d-flex justify-content-between">
+                                    <div>
+                                        <div class="fw-bold">Fri</div>
+                                        <div class="small text-secondary">Stage movement mapping</div>
+                                    </div>
+                                    <span class="badge bg-dark text-secondary">20 min</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card rounded-0 border-0 bg-red text-white p-4">
+                            <h5 class="fw-bold mb-2">Talk Day</h5>
+                            <div class="small mb-3">Prep milestones lock in 72 hours before stage time.</div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <div class="fw-bold">Nov 14, 2026</div>
+                                    <div class="small opacity-75">TEDxBangalore</div>
+                                </div>
+                                <i class="bi bi-flag-fill fs-2"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Tab -->
+            <div id="resources" class="tab-pane-custom">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <img src="assets/img/blueprint.png" alt="Blueprint" width="44" height="44">
+                                <div>
+                                    <div class="fw-bold">Talk Blueprint</div>
+                                    <div class="small text-secondary">18-minute structure, beats, and transitions</div>
+                                </div>
+                            </div>
+                            <a class="btn btn-outline-secondary rounded-0 w-100 mt-auto" href="services.html">Open</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <img src="assets/img/script.png" alt="Script" width="44" height="44">
+                                <div>
+                                    <div class="fw-bold">Script Surgery Checklist</div>
+                                    <div class="small text-secondary">Cut, clarify, and tighten your core idea</div>
+                                </div>
+                            </div>
+                            <a class="btn btn-outline-secondary rounded-0 w-100 mt-auto" href="service-details.html">Open</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4 h-100">
+                            <div class="d-flex align-items-center gap-3 mb-3">
+                                <img src="assets/img/video_tips.png" alt="Video Tips" width="44" height="44">
+                                <div>
+                                    <div class="fw-bold">Video Feedback Guide</div>
+                                    <div class="small text-secondary">How to record rehearsals for fast coaching</div>
+                                </div>
+                            </div>
+                            <a class="btn btn-outline-secondary rounded-0 w-100 mt-auto" href="blog.html">Open</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4">
+                            <h5 class="fw-bold mb-4">Recommended Drills</h5>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="p-3 border border-secondary border-opacity-25">
+                                        <div class="fw-bold">Pace Ladder</div>
+                                        <div class="small text-secondary">3 minutes slow, 3 minutes normal, 3 minutes fast</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 border border-secondary border-opacity-25">
+                                        <div class="fw-bold">Silence Reps</div>
+                                        <div class="small text-secondary">Pause 1–2 seconds after every key line</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 border border-secondary border-opacity-25">
+                                        <div class="fw-bold">One Gesture Rule</div>
+                                        <div class="small text-secondary">Pair one clear gesture to one sentence</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 border border-secondary border-opacity-25">
+                                        <div class="fw-bold">Story Compass</div>
+                                        <div class="small text-secondary">North: truth. South: cost. East: change. West: takeaway.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card rounded-0 border-0 bg-red text-white p-4 h-100">
+                            <h5 class="fw-bold mb-3">Need something specific?</h5>
+                            <div class="small mb-4">Ask for templates, examples, or a talk rewrite outline.</div>
+                            <a class="btn btn-outline border-white text-white rounded-0 w-100 mt-auto" href="contact.html">Contact Coach</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div id="settings" class="tab-pane-custom">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h5 class="fw-bold mb-0">Profile</h5>
+                                <div class="small text-secondary">Saved locally on this device</div>
+                            </div>
+                            <div class="alert alert-success rounded-0 d-none" id="settingsSavedAlert" role="alert">Saved.</div>
+                            <form id="settingsForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-secondary">Full Name</label>
+                                        <input class="form-control rounded-0 bg-transparent border-secondary border-opacity-25" id="settingsName" value="Dr. Priya Sharma">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-secondary">Email</label>
+                                        <input type="email" class="form-control rounded-0 bg-transparent border-secondary border-opacity-25" id="settingsEmail" value="priya@example.com">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-secondary">Talk Title</label>
+                                        <input class="form-control rounded-0 bg-transparent border-secondary border-opacity-25" id="settingsTalkTitle" value="The Surgery That Changed My Voice">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-secondary">Talk Date</label>
+                                        <input type="date" class="form-control rounded-0 bg-transparent border-secondary border-opacity-25" id="settingsTalkDate" value="2026-11-14">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-secondary">Timezone</label>
+                                        <select class="form-select rounded-0 bg-transparent border-secondary border-opacity-25" id="settingsTimezone">
+                                            <option value="Asia/Kolkata" selected>Asia/Kolkata</option>
+                                            <option value="Europe/London">Europe/London</option>
+                                            <option value="America/New_York">America/New_York</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-secondary">Coach</label>
+                                        <input class="form-control rounded-0 bg-transparent border-secondary border-opacity-25" id="settingsCoach" value="Marcus Vane">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-secondary">Notifications</label>
+                                        <div class="d-flex flex-column gap-2">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="settingsNotifySessions" checked>
+                                                <label class="form-check-label" for="settingsNotifySessions">Session reminders</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="settingsNotifyRehearsals" checked>
+                                                <label class="form-check-label" for="settingsNotifyRehearsals">Rehearsal reminders</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="settingsNotifyWeekly">
+                                                <label class="form-check-label" for="settingsNotifyWeekly">Weekly progress summary</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex gap-2 mt-4">
+                                    <button type="submit" class="btn btn-red rounded-0 px-4">Save</button>
+                                    <button type="button" class="btn btn-outline-secondary rounded-0 px-4" id="settingsResetBtn">Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4 mb-4">
+                            <h5 class="fw-bold mb-3">Appearance</h5>
+                            <div class="d-flex flex-column gap-2">
+                                <button class="btn btn-outline-secondary rounded-0 w-100 d-flex justify-content-between align-items-center" type="button" data-theme-toggle>
+                                    <span>Theme</span>
+                                    <i class="bi bi-sun-fill"></i>
+                                </button>
+                                <button class="btn btn-outline-secondary rounded-0 w-100 d-flex justify-content-between align-items-center" type="button" data-rtl-toggle>
+                                    <span>Direction</span>
+                                    <span class="small text-secondary" id="dirLabel">LTR</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card rounded-0 border-0 bg-white dark-theme-bg p-4">
+                            <h5 class="fw-bold mb-3">Account</h5>
+                            <div class="small text-secondary mb-3">This demo dashboard does not connect to a backend.</div>
+                            <button class="btn btn-outline-secondary rounded-0 w-100" type="button">Change Password</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="rehearsalEntryModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content rounded-0 bg-white dark-theme-bg">
+                        <div class="modal-header border-secondary border-opacity-25">
+                            <h5 class="modal-title fw-bold">Add Rehearsal Entry</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form id="rehearsalEntryForm">
+                            <div class="modal-body">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-secondary">Date</label>
+                                        <input type="date" class="form-control rounded-0 bg-transparent border-secondary border-opacity-25" id="rehearsalDate" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-secondary">Duration (minutes)</label>
+                                        <input type="number" min="1" max="120" class="form-control rounded-0 bg-transparent border-secondary border-opacity-25" id="rehearsalDuration" value="18" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-secondary">Focus</label>
+                                        <select class="form-select rounded-0 bg-transparent border-secondary border-opacity-25" id="rehearsalFocus" required>
+                                            <option value="Full run">Full run</option>
+                                            <option value="Opening hook">Opening hook</option>
+                                            <option value="Story arc">Story arc</option>
+                                            <option value="Body language">Body language</option>
+                                            <option value="Voice & pace">Voice & pace</option>
+                                            <option value="Transitions">Transitions</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-secondary">Self-rating</label>
+                                        <select class="form-select rounded-0 bg-transparent border-secondary border-opacity-25" id="rehearsalRating" required>
+                                            <option value="5">5/5</option>
+                                            <option value="4" selected>4/5</option>
+                                            <option value="3">3/5</option>
+                                            <option value="2">2/5</option>
+                                            <option value="1">1/5</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small text-secondary">Video</label>
+                                        <input type="file" class="form-control rounded-0 bg-transparent border-secondary border-opacity-25" id="rehearsalVideo" accept="video/*">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small text-secondary">Notes</label>
+                                        <textarea class="form-control rounded-0 bg-transparent border-secondary border-opacity-25" id="rehearsalNotes" rows="3" placeholder="What worked? What needs tightening?"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer border-secondary border-opacity-25">
+                                <button type="button" class="btn btn-outline-secondary rounded-0" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-red rounded-0" id="saveRehearsalEntryBtn">Save Entry</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <!-- Dashboard JS implementation continues... -->
             
-            <!-- Footer -->
+            <!-- Footer
             <footer class="mt-5 border-top border-secondary border-opacity-25 pt-5">
                 <div class="row g-5">
                     <div class="col-lg-4">
                         <a class="navbar-brand d-flex align-items-center mb-4" href="index.html">
-                            <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
-                            <span class="fw-bold fs-4 ls-1 text-white">StageReady</span>
+                            <img src="assets/img/weblogo.svg" alt="StageReady" width="170" height="40">
                         </a>
                         <p class="text-secondary mb-4">Precision coaching for speakers who refuse to be forgotten. Inspired by the TEDx 18-minute rule.</p>
                         <div class="d-flex gap-3 fs-5">
@@ -314,7 +757,7 @@
                     <p class="text-secondary mb-3 mb-md-0">© 2026 StageReady. All rights reserved.</p>
                     <a href="#" class="btn btn-link text-white p-0"><i class="bi bi-arrow-up"></i> Back to top</a>
                 </div>
-            </footer>
+            </footer> -->
         </main>
     </div>
 

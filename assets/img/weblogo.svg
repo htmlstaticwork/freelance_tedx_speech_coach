@@ -1,0 +1,9 @@
+<svg width="170" height="40" viewBox="0 0 170 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="170" height="40" fill="#000000"/>
+    <g transform="translate(6 0)">
+        <circle cx="20" cy="20" r="18" stroke="#E62B1E" stroke-width="2"/>
+        <path d="M20 10V30M14 16L20 10L26 16" stroke="#E62B1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 15C18.3431 15 17 16.3431 17 18V22C17 23.6569 18.3431 25 20 25C21.6569 25 23 23.6569 23 22V18C23 16.3431 21.6569 15 20 15Z" fill="#E62B1E"/>
+    </g>
+    <text x="58" y="27" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="-1">StageReady</text>
+</svg>

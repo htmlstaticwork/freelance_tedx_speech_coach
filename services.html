@@ -22,9 +22,16 @@
     <header class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
-                <span class="fw-bold fs-4 ls-1">StageReady</span>
+                <img src="assets/img/weblogo.svg" alt="StageReady" width="170" height="40">
             </a>
+            <div class="d-flex align-items-center gap-2 d-xl-none">
+                <button class="btn-nav-outline" id="rtl-toggle-mobile" data-rtl-toggle>RTL</button>
+                <button class="btn-nav-outline" id="theme-toggle-mobile" data-theme-toggle aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                    aria-controls="mobileMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -45,9 +52,35 @@
         </div>
     </header>
 
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold" id="mobileMenuLabel">StageReady</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column mb-4">
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="home-2.html">Home2</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5 active" href="services.html">Programs</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="contact.html">Contact</a></li>
+            </ul>
+            <a href="login.html" class="btn btn-outline w-100 mb-3">Login</a>
+            <a href="dashboard.html" class="btn-red w-100">Dashboard</a>
+        </div>
+    </div>
+
+    <section class="page-hero bg-image-section bg-image-overlay text-white" style="background-image: url('assets/img/methodology.png');">
+        <div class="container text-center">
+            <h1 class="page-hero-title fw-bold">Programs</h1>
+            <p class="page-hero-subtitle opacity-75">Choose the coaching track that matches your stage, timeline, and ambition.</p>
+        </div>
+    </section>
+
     <main class="section-padding">
         <div class="container">
-            <h1 class="display-4 fw-bold mb-5">Coaching Programs</h1>
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div class="col">
                     <div class="card h-100 rounded-0 border-0 bg-black text-white p-0">
@@ -64,7 +97,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card h-100 rounded-0 border-0 bg-light text-black p-0">
+                    <div class="card h-100 rounded-0 border-0 bg-light p-0">
                         <div class="img-hover-scale" style="height: 250px;">
                             <img src="assets/img/speaker.png" alt="Keynote Sprint" class="w-100 h-100 object-fit-cover">
                         </div>
@@ -78,7 +111,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card h-100 rounded-0 border-0 bg-light text-black p-0">
+                    <div class="card h-100 rounded-0 border-0 bg-light p-0">
                         <div class="img-hover-scale" style="height: 250px;">
                             <img src="assets/img/script.png" alt="Script Surgery" class="w-100 h-100 object-fit-cover">
                         </div>
@@ -204,8 +237,7 @@
             <div class="row g-5">
                 <div class="col-lg-4">
                     <a class="navbar-brand d-flex align-items-center mb-4" href="index.html">
-                        <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
-                        <span class="fw-bold fs-4 ls-1 text-white">StageReady</span>
+                        <img src="assets/img/weblogo.svg" alt="StageReady" width="170" height="40">
                     </a>
                     <p class="text-secondary mb-4">Precision coaching for speakers who refuse to be forgotten. Inspired
                         by the TEDx 18-minute rule.</p>

@@ -8,14 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
     initRTL();
     initCountdown();
     initAOS(); /* For subtle micro-animations */
+    initMobileMenuAutoClose();
+    initDashboardSidebarAutoClose();
 });
 
 /**
  * Theme Toggle Functionality
  */
 function initTheme() {
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    if (!themeToggleBtn) return;
+    const toggleButtons = [
+        document.getElementById('theme-toggle'),
+        document.getElementById('theme-toggle-mobile'),
+        ...document.querySelectorAll('[data-theme-toggle]')
+    ].filter(Boolean);
+    const uniqueToggleButtons = Array.from(new Set(toggleButtons));
+    if (uniqueToggleButtons.length === 0) return;
     
     // Check saved theme or default to light
     const currentTheme = localStorage.getItem('theme') || 'light';
@@ -23,26 +30,36 @@ function initTheme() {
         document.body.classList.add('dark-theme');
     }
     
-    themeToggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-        localStorage.setItem('theme', theme);
-        updateThemeIcon();
+    uniqueToggleButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            updateThemeIcon();
+        });
     });
     
     updateThemeIcon();
 }
 
 function updateThemeIcon() {
-    const themeIcon = document.querySelector('#theme-toggle i');
-    if (!themeIcon) return;
-    
+    const themeIcons = [
+        ...document.querySelectorAll('#theme-toggle i'),
+        ...document.querySelectorAll('#theme-toggle-mobile i'),
+        ...document.querySelectorAll('[data-theme-toggle] i')
+    ];
+    if (themeIcons.length === 0) return;
+
     if (document.body.classList.contains('dark-theme')) {
-        themeIcon.classList.remove('bi-moon-fill');
-        themeIcon.classList.add('bi-sun-fill');
+        themeIcons.forEach((icon) => {
+            icon.classList.remove('bi-moon-fill');
+            icon.classList.add('bi-sun-fill');
+        });
     } else {
-        themeIcon.classList.remove('bi-sun-fill');
-        themeIcon.classList.add('bi-moon-fill');
+        themeIcons.forEach((icon) => {
+            icon.classList.remove('bi-sun-fill');
+            icon.classList.add('bi-moon-fill');
+        });
     }
 }
 
@@ -50,16 +67,23 @@ function updateThemeIcon() {
  * RTL Toggle Functionality
  */
 function initRTL() {
-    const rtlToggleBtn = document.getElementById('rtl-toggle');
-    if (!rtlToggleBtn) return;
+    const toggleButtons = [
+        document.getElementById('rtl-toggle'),
+        document.getElementById('rtl-toggle-mobile'),
+        ...document.querySelectorAll('[data-rtl-toggle]')
+    ].filter(Boolean);
+    const uniqueToggleButtons = Array.from(new Set(toggleButtons));
+    if (uniqueToggleButtons.length === 0) return;
     
     // Check saved RTL or default to ltr
     const currentDir = localStorage.getItem('dir') || 'ltr';
     setDirection(currentDir);
     
-    rtlToggleBtn.addEventListener('click', () => {
-        const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
-        setDirection(newDir);
+    uniqueToggleButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const newDir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';
+            setDirection(newDir);
+        });
     });
 }
 
@@ -125,5 +149,66 @@ function initAOS() {
 
     faders.forEach(fader => {
         appearOnScroll.observe(fader);
+    });
+}
+
+function initMobileMenuAutoClose() {
+    const offcanvasEl = document.getElementById('mobileMenu');
+    if (!offcanvasEl) return;
+
+    const Offcanvas = window.bootstrap?.Offcanvas;
+    if (!Offcanvas) return;
+
+    const getInstance = () => Offcanvas.getInstance(offcanvasEl) || new Offcanvas(offcanvasEl);
+    const hide = () => {
+        try {
+            getInstance().hide();
+        } catch {}
+    };
+
+    offcanvasEl.addEventListener('click', (e) => {
+        const interactive = e.target.closest('a, button');
+        if (!interactive) return;
+        if (interactive.matches('[data-bs-toggle="offcanvas"]')) return;
+
+        const tag = interactive.tagName.toLowerCase();
+        if (tag === 'a') {
+            const href = (interactive.getAttribute('href') || '').trim();
+            if (!href) return;
+            if (href.toLowerCase().startsWith('javascript:')) return;
+            hide();
+            return;
+        }
+
+        hide();
+    });
+}
+
+function initDashboardSidebarAutoClose() {
+    const sidebar = document.getElementById('dashboardSidebar');
+    if (!sidebar) return;
+
+    const isMobile = () => window.matchMedia('(max-width: 1100px)').matches;
+    const hide = () => sidebar.classList.remove('show');
+
+    document.addEventListener('click', (e) => {
+        if (!isMobile()) return;
+        if (!sidebar.classList.contains('show')) return;
+        const target = e.target;
+        if (target.closest('#dashboardSidebar')) return;
+        if (target.closest('.dashboard-hamburger')) return;
+        hide();
+    }, true);
+
+    sidebar.addEventListener('click', (e) => {
+        if (!isMobile()) return;
+        if (!sidebar.classList.contains('show')) return;
+        const interactive = e.target.closest('a, button, .nav-link-dash');
+        if (!interactive) return;
+        window.setTimeout(hide, 0);
+    });
+
+    window.addEventListener('resize', () => {
+        if (!isMobile()) hide();
     });
 }

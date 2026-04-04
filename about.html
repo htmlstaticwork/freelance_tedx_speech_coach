@@ -22,9 +22,16 @@
     <header class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
-                <span class="fw-bold fs-4 ls-1">StageReady</span>
+                <img src="assets/img/weblogo.svg" alt="StageReady" width="170" height="40">
             </a>
+            <div class="d-flex align-items-center gap-2 d-xl-none">
+                <button class="btn-nav-outline" id="rtl-toggle-mobile" data-rtl-toggle>RTL</button>
+                <button class="btn-nav-outline" id="theme-toggle-mobile" data-theme-toggle aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                    aria-controls="mobileMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -45,7 +52,34 @@
         </div>
     </header>
 
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold" id="mobileMenuLabel">StageReady</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column mb-4">
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="home-2.html">Home2</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5 active" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="services.html">Programs</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="contact.html">Contact</a></li>
+            </ul>
+            <a href="login.html" class="btn btn-outline w-100 mb-3">Login</a>
+            <a href="dashboard.html" class="btn-red w-100">Dashboard</a>
+        </div>
+    </div>
+
     <main>
+        <section class="page-hero bg-image-section bg-image-overlay text-white" style="background-image: url('assets/img/studio.png');">
+            <div class="container text-center">
+                <h1 class="page-hero-title fw-bold">About StageReady</h1>
+                <p class="page-hero-subtitle opacity-75">A war room for authority voices. Built on psychology, structure, and relentless rehearsal.</p>
+            </div>
+        </section>
+
         <!-- [NEW] Advisory Board Section -->
         <section class="section-padding bg-light">
             <div class="container">
@@ -56,9 +90,12 @@
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <div class="col">
                         <div class="card border-0 rounded-0 shadow-sm overflow-hidden img-hover-scale">
-                            <img src="assets/img/team.png" alt="Creative Specialists" class="w-100">
+                            <img src="assets/img/script.png" alt="Rhetoric Team" class="w-100">
                             <div class="p-4">
-                                <h5 class="fw-bold mb-1">Rhetoric Team</h5>
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <i class="bi bi-mic-fill text-red"></i>
+                                    <h5 class="fw-bold mb-0">Rhetoric Team</h5>
+                                </div>
                                 <p class="small text-secondary mb-0">Crafting the perfect cadence and linguistic
                                     precision.</p>
                             </div>
@@ -72,10 +109,13 @@
                     </div>
                     <div class="col">
                         <div class="card border-0 rounded-0 shadow-sm overflow-hidden img-hover-scale">
-                            <img src="assets/img/team.png" alt="Narrative Architects" class="w-100"
+                            <img src="assets/img/blueprint.png" alt="Psychology Lab" class="w-100"
                                 style="filter: grayscale(100%);">
                             <div class="p-4">
-                                <h5 class="fw-bold mb-1">Psychology Lab</h5>
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <i class="bi bi-clipboard-data-fill text-red"></i>
+                                    <h5 class="fw-bold mb-0">Psychology Lab</h5>
+                                </div>
                                 <p class="small text-secondary mb-0">Auditing every beat for audience retention and
                                     impact.</p>
                             </div>
@@ -199,23 +239,29 @@
             <div class="container">
                 <h2 class="text-center mb-5">Our Philosophy</h2>
                 <div class="row row-cols-1 row-cols-md-3 g-5">
-                    <div class="col text-center">
-                        <i class="bi bi-lightning-charge fs-1 text-red mb-3 d-block"></i>
-                        <h4>Brevity</h4>
-                        <p class="text-secondary">If you can't say it in 18 minutes, you don't know it well enough. We
-                            cut the fluff and keep the fire.</p>
+                    <div class="col">
+                        <div class="philosophy-card text-center p-4 p-lg-5 h-100">
+                            <div class="feature-icon text-red mb-3"><i class="bi bi-lightning-charge fs-3"></i></div>
+                            <h4 class="mb-3">Brevity</h4>
+                            <p class="text-secondary mb-0">If you can't say it in 18 minutes, you don't know it well enough. We
+                                cut the fluff and keep the fire.</p>
+                        </div>
                     </div>
-                    <div class="col text-center">
-                        <i class="bi bi-brain fs-1 text-red mb-3 d-block"></i>
-                        <h4>Psychology</h4>
-                        <p class="text-secondary">We build speeches around how the human brain processes information and
-                            stores memory.</p>
+                    <div class="col">
+                        <div class="philosophy-card text-center p-4 p-lg-5 h-100">
+                            <div class="feature-icon text-red mb-3"><i class="bi bi-activity fs-3"></i></div>
+                            <h4 class="mb-3">Psychology</h4>
+                            <p class="text-secondary mb-0">We build speeches around how the human brain processes information and
+                                stores memory.</p>
+                        </div>
                     </div>
-                    <div class="col text-center">
-                        <i class="bi bi-eye fs-1 text-red mb-3 d-block"></i>
-                        <h4>Impact</h4>
-                        <p class="text-secondary">We don't aim for 'good'. We aim for the standing ovation and the
-                            global movement.</p>
+                    <div class="col">
+                        <div class="philosophy-card text-center p-4 p-lg-5 h-100">
+                            <div class="feature-icon text-red mb-3"><i class="bi bi-eye fs-3"></i></div>
+                            <h4 class="mb-3">Impact</h4>
+                            <p class="text-secondary mb-0">We don't aim for 'good'. We aim for the standing ovation and the
+                                global movement.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -270,8 +316,7 @@
             <div class="row g-5">
                 <div class="col-lg-4">
                     <a class="navbar-brand d-flex align-items-center mb-4" href="index.html">
-                        <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
-                        <span class="fw-bold fs-4 ls-1 text-white">StageReady</span>
+                        <img src="assets/img/weblogo.svg" alt="StageReady" width="170" height="40">
                     </a>
                     <p class="text-secondary mb-4">Precision coaching for speakers who refuse to be forgotten. Inspired
                         by the TEDx 18-minute rule.</p>

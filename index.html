@@ -39,13 +39,13 @@
         <div class="container">
             <!-- Logo -->
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
-                <span class="fw-bold fs-4 ls-1">StageReady</span>
+                <img src="assets/img/weblogo.svg" alt="StageReady" width="170" height="40">
             </a>
 
             <!-- Mobile Toggles (Visible < 1101px) -->
             <div class="d-flex align-items-center d-xl-none">
-                <button class="btn btn-link p-2" id="theme-toggle-mobile" aria-label="Toggle Theme">
+                <button class="btn-nav-outline me-2" id="rtl-toggle-mobile" data-rtl-toggle>RTL</button>
+                <button class="btn btn-link p-2" id="theme-toggle-mobile" data-theme-toggle aria-label="Toggle Theme">
                     <i class="bi bi-moon-fill text-dark"></i>
                 </button>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
@@ -85,7 +85,7 @@
         </div>
         <div class="offcanvas-body">
             <ul class="nav flex-column mb-4">
-                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5 active" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="home-2.html">Home2</a></li>
                 <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="services.html">Programs</a></li>
@@ -212,7 +212,7 @@
         <section class="section-padding">
             <div class="container">
                 <h2 class="text-center mb-5">Why StageReady?</h2>
-                <div class="table-responsive">
+                <div class="table-responsive comparison-table">
                     <table class="table border">
                         <thead>
                             <tr class="bg-black text-white">
@@ -276,7 +276,7 @@
         <section class="section-padding bg-light">
             <div class="container">
                 <h2 class="text-center mb-5">Voices of Impact</h2>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="row row-cols-1 row-cols-lg-3 g-4">
                     <div class="col">
                         <div class="testimonial-card">
                             <i class="bi bi-quote fs-1 text-red mb-3 d-block"></i>
@@ -321,10 +321,10 @@
         </section>
 
         <!-- [NEW] S7 - The 3-Step Process -->
-        <section class="section-padding">
+        <section class="section-padding stageready-path-section">
             <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 text-center text-xl-start">
                         <h2 class="mb-4">The StageReady Path</h2>
                         <p class="text-secondary mb-5">We don't teach you to speak. We teach you to be heard. Our
                             three-phase system is designed for high-stakes impact.</p>
@@ -363,9 +363,9 @@
                 <h2 class="mb-4">The world needs your idea.</h2>
                 <div class="row justify-content-center">
                     <div class="col-md-6">
-                        <form class="d-flex gap-2">
+                        <form class="d-flex flex-column flex-sm-row gap-2">
                             <input type="email" class="form-control rounded-0" placeholder="Your Email" required>
-                            <button type="submit" class="btn-red text-nowrap">Book Discovery Call</button>
+                            <button type="submit" class="btn-red text-nowrap">Book Your Call</button>
                         </form>
                     </div>
                 </div>
@@ -379,8 +379,7 @@
             <div class="row g-5">
                 <div class="col-lg-4">
                     <a class="navbar-brand d-flex align-items-center mb-4" href="#">
-                        <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
-                        <span class="fw-bold fs-4 ls-1 text-white">StageReady</span>
+                        <img src="assets/img/weblogo.svg" alt="StageReady" width="170" height="40">
                     </a>
                     <p class="text-secondary mb-4">Precision coaching for speakers who refuse to be forgotten. Inspired
                         by the TEDx 18-minute rule.</p>

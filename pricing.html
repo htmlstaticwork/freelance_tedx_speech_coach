@@ -22,9 +22,16 @@
     <header class="navbar navbar-expand-xl sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
-                <span class="fw-bold fs-4 ls-1">StageReady</span>
+                <img src="assets/img/weblogo.svg" alt="StageReady" width="170" height="40">
             </a>
+            <div class="d-flex align-items-center gap-2 d-xl-none">
+                <button class="btn-nav-outline" id="rtl-toggle-mobile" data-rtl-toggle>RTL</button>
+                <button class="btn-nav-outline" id="theme-toggle-mobile" data-theme-toggle aria-label="Toggle Theme"><i class="bi bi-moon-fill"></i></button>
+                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+                    aria-controls="mobileMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -45,23 +52,50 @@
         </div>
     </header>
 
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold" id="mobileMenuLabel">StageReady</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="nav flex-column mb-4">
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="home-2.html">Home2</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="services.html">Programs</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5 active" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link py-3 border-bottom fs-5" href="contact.html">Contact</a></li>
+            </ul>
+            <a href="login.html" class="btn btn-outline w-100 mb-3">Login</a>
+            <a href="dashboard.html" class="btn-red w-100">Dashboard</a>
+        </div>
+    </div>
+
+    <section class="page-hero bg-image-section bg-image-overlay text-white" style="background-image: url('assets/img/scholarship.png');">
+        <div class="container text-center">
+            <h1 class="page-hero-title fw-bold">Pricing</h1>
+            <p class="page-hero-subtitle opacity-75">High-impact coaching built for speakers who take the stage seriously.</p>
+        </div>
+    </section>
+
     <main class="section-padding">
         <div class="container">
             <div class="text-center mb-5">
-                <h1 class="display-4 fw-bold">Investment Tiers</h1>
+                <h2 class="fw-bold">Investment Tiers</h2>
                 <p class="text-secondary">Quality coaching is an investment in your authority voice.</p>
             </div>
 
             <div class="row g-4 justify-content-center row-cols-1 row-cols-lg-2">
                 <!-- 2-column plans -->
                 <div class="col-xl-5">
-                    <div class="card h-100 rounded-0 border bg-light p-5 transition">
+                    <div class="card h-100 rounded-0 border bg-light p-5 transition text-center">
                         <h4 class="fw-bold mb-3 ls-1">The Sprint</h4>
                         <div class="fs-1 fw-bold text-red mb-3">$2,499<span class="fs-6 text-dark opacity-50 fw-normal">
                                 / 4 Weeks</span></div>
                         <p class="text-secondary mb-4">For speakers with an existing script who need to maximize
                             delivery effectiveness and stage presence.</p>
-                        <ul class="nav flex-column gap-3 mb-5 fs-6">
+                        <ul class="nav flex-column gap-3 mb-5 fs-6 align-items-center">
                             <li><i class="bi bi-check text-red"></i> 4x 1-on-1 Sessions</li>
                             <li><i class="bi bi-check text-red"></i> Script Anatomy Audit</li>
                             <li><i class="bi bi-check text-red"></i> 5 Rehearsal Logs</li>
@@ -71,14 +105,14 @@
                     </div>
                 </div>
                 <div class="col-xl-5">
-                    <div class="card h-100 rounded-0 border-0 bg-black text-white p-5 shadow-lg position-relative">
+                    <div class="card h-100 rounded-0 border-0 bg-black text-white p-5 shadow-lg position-relative text-center">
                         <div class="pricing-badge">MOST POPULAR</div>
                         <h4 class="fw-bold mb-3 ls-1">The Full Prep</h4>
                         <div class="fs-1 fw-bold text-red mb-3">$7,999<span
                                 class="fs-6 text-white opacity-50 fw-normal"> / 16 Weeks</span></div>
                         <p class="text-secondary mb-4">The absolute choice for TEDx and high-stakes opening keynotes.
                             Comprehensive transformation.</p>
-                        <ul class="nav flex-column gap-3 mb-5 fs-6 text-white text-opacity-75">
+                        <ul class="nav flex-column gap-3 mb-5 fs-6 text-white text-opacity-75 align-items-center">
                             <li><i class="bi bi-check text-red"></i> 16x 1-on-1 Sessions</li>
                             <li><i class="bi bi-check text-red"></i> End-to-End Narrative DNA Design</li>
                             <li><i class="bi bi-check text-red"></i> 15 Rehearsal Logs</li>
@@ -214,8 +248,7 @@
             <div class="row g-5">
                 <div class="col-lg-4">
                     <a class="navbar-brand d-flex align-items-center mb-4" href="index.html">
-                        <img src="assets/img/logo.svg" alt="StageReady Logo" width="40" height="40" class="me-2">
-                        <span class="fw-bold fs-4 ls-1 text-white">StageReady</span>
+                        <img src="assets/img/weblogo.svg" alt="StageReady" width="170" height="40">
                     </a>
                     <p class="text-secondary mb-4">Precision coaching for speakers who refuse to be forgotten. Inspired
                         by the TEDx 18-minute rule.</p>
