@@ -16,7 +16,7 @@
         body { background-color: #f8f9fa; }
         body.dark-theme { background-color: #1a1a1a; }
         
-        .dashboard-wrapper { display: flex; min-height: 100 vh; }
+        .dashboard-wrapper { display: flex; min-height: 100vh; overflow-x: hidden; }
         
         .sidebar {
             width: var(--sidebar-width);
@@ -33,6 +33,7 @@
             flex: 1;
             padding: clamp(15px, 4vw, 40px);
             transition: var(--transition);
+            overflow-x: hidden;
         }
 
         [dir="rtl"] .sidebar {

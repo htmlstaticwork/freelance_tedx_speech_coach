@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initAOS(); /* For subtle micro-animations */
     initMobileMenuAutoClose();
     initDashboardSidebarAutoClose();
+    initPasswordVisibility();
 });
 
 /**
@@ -22,22 +23,25 @@ function initTheme() {
         ...document.querySelectorAll('[data-theme-toggle]')
     ].filter(Boolean);
     const uniqueToggleButtons = Array.from(new Set(toggleButtons));
-    if (uniqueToggleButtons.length === 0) return;
     
     // Check saved theme or default to light
     const currentTheme = localStorage.getItem('theme') || 'light';
     if (currentTheme === 'dark') {
         document.body.classList.add('dark-theme');
+    } else {
+        document.body.classList.remove('dark-theme');
     }
     
-    uniqueToggleButtons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-            const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
-            localStorage.setItem('theme', theme);
-            updateThemeIcon();
+    if (uniqueToggleButtons.length > 0) {
+        uniqueToggleButtons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme');
+                const theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+                localStorage.setItem('theme', theme);
+                updateThemeIcon();
+            });
         });
-    });
+    }
     
     updateThemeIcon();
 }
@@ -210,5 +214,28 @@ function initDashboardSidebarAutoClose() {
 
     window.addEventListener('resize', () => {
         if (!isMobile()) hide();
+    });
+}
+
+/**
+ * Password Visibility Toggle
+ */
+function initPasswordVisibility() {
+    const toggles = document.querySelectorAll('.password-toggle-icon');
+    toggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const input = this.parentElement.querySelector('input');
+            const icon = this.querySelector('i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('bi-eye-fill');
+                icon.classList.add('bi-eye-slash-fill');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('bi-eye-slash-fill');
+                icon.classList.add('bi-eye-fill');
+            }
+        });
     });
 }
