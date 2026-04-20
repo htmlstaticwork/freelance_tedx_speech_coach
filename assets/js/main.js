@@ -99,6 +99,17 @@ function setDirection(dir) {
     if (bootstrapRTL) {
         bootstrapRTL.disabled = (dir !== 'rtl');
     }
+
+    // Update Button Text
+    const toggleButtons = [
+        document.getElementById('rtl-toggle'),
+        document.getElementById('rtl-toggle-mobile'),
+        ...document.querySelectorAll('[data-rtl-toggle]')
+    ].filter(Boolean);
+    
+    toggleButtons.forEach(btn => {
+        btn.textContent = (dir === 'rtl') ? 'LTR' : 'RTL';
+    });
 }
 
 /**
